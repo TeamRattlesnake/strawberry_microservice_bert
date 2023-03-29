@@ -3,7 +3,6 @@ import copy
 import logging
 from multiprocessing import Process
 from fastapi import FastAPI
-from fastapi.staticfiles import StaticFiles
 from fastapi.openapi.utils import get_openapi
 from models import ResponseModel, AddGroupModel, GenerateModel
 from logic import NeuralNetwork
@@ -15,7 +14,6 @@ logging.basicConfig(format="%(asctime)s %(message)s", handlers=[logging.FileHand
 
 app = FastAPI()
 
-app.mount("/content", StaticFiles(directory="content"), name="content")
 
 NN = None
 process_pool = {}
