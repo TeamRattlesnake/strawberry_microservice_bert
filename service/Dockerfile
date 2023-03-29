@@ -1,10 +1,11 @@
-FROM fedora:latest
+FROM debian:bullseye-slim
 
 WORKDIR /home
 
 COPY . /home
 
-RUN dnf install -y pip && \
-    pip install -r requirements.txt
+RUN apt update && \
+    apt install -y python3 python3-pip && \
+    pip3 install -r requirements.txt
 
-CMD ["uvicorn", "--app-dir", "src", "--host", "0.0.0.0", "--port", "20001", "server:app"]
+CMD ["uvicorn", "--app-dir", "src", "--host", "0.0.0.0", "--port", "20002", "server:app"]

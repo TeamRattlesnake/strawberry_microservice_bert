@@ -1,7 +1,10 @@
+wheel
 fastapi
 uvicorn
 fastapi_utils
 tqdm
-transformers
+transformers[sentencepiece]
 accelerate
 pydantic
+torch
+sentencepiece
