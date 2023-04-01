@@ -10,4 +10,4 @@ services:
     volumes:
       - ./service:/home
     ports:
-      - 20002:20002
+      - 20004:20004

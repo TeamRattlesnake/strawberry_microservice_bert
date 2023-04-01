@@ -9,7 +9,7 @@ from logic import NeuralNetwork
 
 
 logging.basicConfig(format="%(asctime)s %(message)s", handlers=[logging.FileHandler(
-    f"/home/logs/summarize_log.txt", mode="w", encoding="UTF-8")], datefmt="%I:%M:%S %p", level=logging.INFO)
+    f"/home/logs/bert_log.txt", mode="w", encoding="UTF-8")], datefmt="%I:%M:%S %p", level=logging.INFO)
 
 
 app = FastAPI()
@@ -56,7 +56,7 @@ async def add_group(data: AddGroupModel):
     texts = data.texts
     logging.info(f"Adding group {group_id}")
     if len(texts) == 0:
-            raise ValueError("Empty texts (who cares)")
+        raise ValueError("Empty texts (who cares)")
     return ResponseModel(result="OK")
 
 
