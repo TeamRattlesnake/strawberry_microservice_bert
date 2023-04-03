@@ -22,7 +22,7 @@ class NeuralNetwork:
 
     def generate(self, hint):
         logging.info(f"Generating for hint: {hint}")
-        result = self.pipe(hint, top_k=10)
+        result = self.pipe(hint, top_k=20)
 
         result = [item["token_str"] for item in result]
 
